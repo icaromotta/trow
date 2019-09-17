@@ -49,7 +49,7 @@ router.put('/update/:id', (req, res) => {
     }
     Product.findOneAndUpdate({_id: req.params.id}, product, (err, product) => {
         if (err) return handleError(err);
-        product.save(product)
+        product.save(product);
         res.send({ok: "true"});
     })
 });

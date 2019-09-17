@@ -8,12 +8,16 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 require('./models/banners')
-require('./models/products')
+require('./models/product')
+require('./models/category')
+require('./models/store')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var bannersRouter = require('./routes/banners');
-var productRouter = require('./routes/products');
+var producstRouter = require('./routes/products');
+var catagoriesRouter = require('./routes/categories');
+var storeRouter = require('./routes/stores')
 
 var app = express();
 
@@ -39,7 +43,9 @@ app.use(cookieParser());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/banners', bannersRouter);
-app.use('/products', productRouter);
+app.use('/products', producstRouter);
+app.use('/categories', catagoriesRouter);
+app.use('/stores', storeRouter);
 
 /**
  * Connect to MongoDB.
